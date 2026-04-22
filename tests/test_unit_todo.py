@@ -35,3 +35,20 @@ def test_todo_marked_complete():
     todo.mark_complete()
     assert todo.task == "Know where towel is"
     assert todo.complete == True
+
+"""
+mark complete always sets to true 
+even if mark complete ran multiple even number
+of times
+check for not self.complete
+"""
+
+def test_todo_marked_complete_multiple_runs():
+    task = "Know where towel is"
+    todo = Todo(task)
+    todo.mark_complete()
+    todo.mark_complete()
+    todo.mark_complete()
+    todo.mark_complete()
+    assert todo.task == "Know where towel is"
+    assert todo.complete == True
